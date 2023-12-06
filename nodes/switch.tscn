@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6gu125nckhdo"]
+
+[ext_resource type="Texture2D" uid="uid://dtecsmu0jp0ca" path="res://assets/Purple.png" id="1_limsg"]
+[ext_resource type="Script" path="res://code/switch.gd" id="1_y165j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_py55n"]
+size = Vector2(116, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jll3g"]
+size = Vector2(96, 20)
+
+[node name="switch" type="Area2D"]
+script = ExtResource("1_y165j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-38, 48)
+shape = SubResource("RectangleShape2D_py55n")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-48, -10)
+shape = SubResource("RectangleShape2D_jll3g")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-48, -10)
+scale = Vector2(1.5, 0.3125)
+texture = ExtResource("1_limsg")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

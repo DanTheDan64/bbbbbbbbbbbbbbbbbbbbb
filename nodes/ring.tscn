@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1yi8jbs6ccub"]
+
+[ext_resource type="Texture2D" uid="uid://nijw7cdktupl" path="res://assets/Confetti (16x16).png" id="1_gci8s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fy1k6"]
+size = Vector2(16, 84)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_hd1gu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1o76f"]
+size = Vector2(16.5, 15.907)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_dmdkb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kewde"]
+size = Vector2(16, 15.9746)
+
+[node name="ring" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_gci8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fy1k6")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, 50)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(-4.54747e-13, -3.8147e-06)
+scale = Vector2(16.5, 15.6189)
+texture = SubResource("PlaceholderTexture2D_hd1gu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_1o76f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -50)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(16, 16)
+texture = SubResource("PlaceholderTexture2D_dmdkb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_kewde")

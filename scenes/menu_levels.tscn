@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://cujnvty24g88q"]
+
+[ext_resource type="Script" path="res://menu stuff/menu_levels.gd" id="1_tb4bc"]
+[ext_resource type="PackedScene" uid="uid://bui456a5evhs7" path="res://nodes/button.tscn" id="2_r7ydg"]
+[ext_resource type="Texture2D" uid="uid://dtecsmu0jp0ca" path="res://assets/Purple.png" id="3_k550p"]
+
+[node name="menu_levels" type="Node2D"]
+script = ExtResource("1_tb4bc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Purple" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(20, 20)
+texture = ExtResource("3_k550p")
+
+[node name="lvl_1" parent="." instance=ExtResource("2_r7ydg")]
+offset_left = -225.0
+offset_top = -200.0
+offset_right = -25.0
+offset_bottom = -100.0
+text = "lvl_1"
+
+[node name="lvl_2" parent="." instance=ExtResource("2_r7ydg")]
+offset_left = 25.0
+offset_top = -200.0
+offset_right = 225.0
+offset_bottom = -100.0
+text = "lvl_2"
+
+[node name="lvl_3" parent="." instance=ExtResource("2_r7ydg")]
+offset_left = -350.0
+offset_top = -50.0
+offset_right = -150.0
+offset_bottom = 50.0
+text = "lvl_3"
+
+[node name="lvl_4" parent="." instance=ExtResource("2_r7ydg")]
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = 50.0
+text = "lvl_4"
+
+[node name="lvl_5" parent="." instance=ExtResource("2_r7ydg")]
+offset_left = 150.0
+offset_top = -50.0
+offset_right = 350.0
+offset_bottom = 50.0
+text = "lvl_5"
+
+[node name="lvl_6" parent="." instance=ExtResource("2_r7ydg")]
+offset_left = -225.0
+offset_top = 100.0
+offset_right = -25.0
+offset_bottom = 200.0
+text = "lvl_6"
+
+[node name="lvl_7" parent="." instance=ExtResource("2_r7ydg")]
+offset_left = 25.0
+offset_top = 100.0
+offset_right = 225.0
+offset_bottom = 200.0
+text = "test_lvl for now cus I wnt you to see how the game feels to play"
+
+[node name="back" parent="." instance=ExtResource("2_r7ydg")]
+offset_left = 350.0
+offset_top = 200.0
+offset_right = 550.0
+offset_bottom = 300.0
+text = "back"
+
+[connection signal="pressed" from="lvl_1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="lvl_2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="lvl_3" to="." method="_on_lvl_3_pressed"]
+[connection signal="pressed" from="lvl_4" to="." method="_on_lvl_4_pressed"]
+[connection signal="pressed" from="lvl_5" to="." method="_on_lvl_5_pressed"]
+[connection signal="pressed" from="lvl_6" to="." method="_on_lvl_6_pressed"]
+[connection signal="pressed" from="lvl_7" to="." method="_on_lvl_7_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

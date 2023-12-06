@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://de4n7inpusldh"]
+
+[ext_resource type="Script" path="res://menu stuff/menu.gd" id="1_efdiq"]
+[ext_resource type="PackedScene" uid="uid://bui456a5evhs7" path="res://nodes/button.tscn" id="3_o7c05"]
+[ext_resource type="Texture2D" uid="uid://olx3683uov6n" path="res://assets/Brown.png" id="3_rw5ku"]
+
+[node name="menu" type="Node2D"]
+script = ExtResource("1_efdiq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Purple" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(20, 20)
+texture = ExtResource("3_rw5ku")
+
+[node name="start" parent="." instance=ExtResource("3_o7c05")]
+offset_left = -100.0
+offset_top = -275.0
+offset_right = 100.0
+offset_bottom = -175.0
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="options" parent="." instance=ExtResource("3_o7c05")]
+offset_left = -100.0
+offset_top = -125.0
+offset_right = 100.0
+offset_bottom = -25.0
+text = "Options"
+metadata/_edit_use_anchors_ = true
+
+[node name="records" parent="." instance=ExtResource("3_o7c05")]
+offset_left = -100.0
+offset_top = 25.0
+offset_right = 100.0
+offset_bottom = 125.0
+text = "Records"
+metadata/_edit_use_anchors_ = true
+
+[node name="back" parent="." instance=ExtResource("3_o7c05")]
+offset_left = -100.0
+offset_top = 175.0
+offset_right = 100.0
+offset_bottom = 275.0
+text = "Quit
+"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="records" to="." method="_on_records_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
